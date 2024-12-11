@@ -4,6 +4,7 @@ const uuid = require('uuid')
 const Blockchain = require('./blockchain');
 const AbhulimenOjie_7762 = new Blockchain();
 const nodeAddress = uuid.v1().split("-").join("")
+const port = process.argv[2]
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -39,6 +40,6 @@ app.get('/mine', function(req, res) {
 });
 
 // Start the server on port 3000
-app.listen(1504, function() {
-    console.log('Listening on port 1504...');
+app.listen(port, function() {
+    console.log(`Listening on port ${port}...`);
 });
